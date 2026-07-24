@@ -1,0 +1,12 @@
+observed_at,stage,host,port,protocol,decision,reason
+2026-07-24T13:06:54Z,probe,127.0.0.1,8760,tcp,deny,out of scope
+2026-07-24T13:06:54Z,probe,127.0.0.1,8761,tcp,deny,out of scope
+2026-07-24T13:06:54Z,probe,127.0.0.1,8762,tcp,deny,out of scope
+2026-07-24T13:06:54Z,probe,127.0.0.1,8763,tcp,deny,out of scope
+2026-07-24T13:06:54Z,probe,127.0.0.1,8764,tcp,deny,out of scope
+2026-07-24T13:06:54Z,probe,127.0.0.1,8765,tcp,deny,out of scope
+2026-07-24T13:06:54Z,probe,127.0.0.1,8766,tcp,deny,out of scope
+2026-07-24T13:06:54Z,probe,127.0.0.1,8767,tcp,deny,out of scope
+2026-07-24T13:06:54Z,probe,127.0.0.1,8768,tcp,deny,out of scope
+2026-07-24T13:06:54Z,probe,127.0.0.1,8769,tcp,deny,out of scope
+2026-07-24T13:06:54Z,probe,127.0.0.1,8770,tcp,deny,out of scope

@@ -1,0 +1,15 @@
+{
+  "target": "127.0.0.1",
+  "start_utc": "2026-07-24T13:06:54Z",
+  "end_utc": "2026-07-24T13:06:54Z",
+  "records_written": 0,
+  "requests_used": 0,
+  "requests_remaining": 240,
+  "completed_stages": [
+    "dns",
+    "probe",
+    "ports",
+    "fingerprint"
+  ],
+  "errors": []
+}

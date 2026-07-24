@@ -1,0 +1,1 @@
+{"baseline_diff": null, "confidence": "medium", "length": null, "notes": "no banner", "observed_at": "2026-07-24T13:11:02Z", "port": 8765, "protocol": "tcp", "redirect": null, "schema_version": "1.0", "service": "unknown", "source_file": "run-test2\\normalized\\assets.jsonl", "source_tool": "fallback-socket-scanner", "status": null, "target": "127.0.0.1", "title": null}

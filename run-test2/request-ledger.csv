@@ -1,0 +1,13 @@
+observed_at,stage,host,port,protocol,decision,reason
+2026-07-24T13:10:50Z,probe,127.0.0.1,8760,tcp,allow,
+2026-07-24T13:10:52Z,probe,127.0.0.1,8761,tcp,allow,
+2026-07-24T13:10:54Z,probe,127.0.0.1,8762,tcp,allow,
+2026-07-24T13:10:56Z,probe,127.0.0.1,8763,tcp,allow,
+2026-07-24T13:10:58Z,probe,127.0.0.1,8764,tcp,allow,
+2026-07-24T13:11:00Z,probe,127.0.0.1,8765,tcp,allow,
+2026-07-24T13:11:02Z,probe,127.0.0.1,8766,tcp,allow,
+2026-07-24T13:11:04Z,probe,127.0.0.1,8767,tcp,allow,
+2026-07-24T13:11:06Z,probe,127.0.0.1,8768,tcp,allow,
+2026-07-24T13:11:08Z,probe,127.0.0.1,8769,tcp,allow,
+2026-07-24T13:11:10Z,probe,127.0.0.1,8770,tcp,allow,
+2026-07-24T13:11:12Z,fingerprint,127.0.0.1,8765,tcp,allow,
