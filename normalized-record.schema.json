@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NormalizedRecord",
+  "description": "The single versioned schema every parser normalizes tool output into. See recon_engine/schema.py. All fields must be non-null except vhost-only optional fields (status, length, title, redirect, baseline_diff).",
+  "type": "object",
+  "required": [
+    "observed_at",
+    "target",
+    "port",
+    "protocol",
+    "service",
+    "source_tool",
+    "source_file",
+    "confidence",
+    "notes",
+    "schema_version"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Versioned schema identifier. Must always be '1.0'."
+    },
+    "observed_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+      "description": "ISO8601 UTC timestamp (e.g. 2026-07-24T13:10:50Z). Must end with 'Z' for UTC."
+    },
+    "target": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "description": "Host or IP as seen in the raw artifact. Can be a hostname (target.invalid) or IP address (127.0.0.1, 192.168.1.1)."
+    },
+    "port": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 65535,
+      "description": "TCP/UDP port number. Must be in range 1-65535."
+    },
+    "protocol": {
+      "type": "string",
+      "enum": [
+        "tcp",
+        "udp"
+      ],
+      "description": "Transport protocol: tcp or udp."
+    },
+    "service": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "Service or protocol name (e.g. http, https, ssh, unknown). Never empty."
+    },
+    "source_tool": {
+      "type": "string",
+      "enum": [
+        "nmap",
+        "naabu",
+        "httpx",
+        "line",
+        "fallback-socket-scanner"
+      ],
+      "description": "The tool that discovered this record. Determines how to parse raw output."
+    },
+    "source_file": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Absolute or relative path to the raw artifact file this record was derived from (e.g. raw/fallback-socket-scanner/scan-1.txt)."
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "description": "Confidence level: high (verified), medium (probable), low (possible)."
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "Additional context or observations about this record (e.g. 'banner: nginx/1.14', 'no banner', 'vhost differs from baseline')."
+    },
+    "status": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 100,
+      "maximum": 599,
+      "description": "HTTP status code (100-599), vhost-only field. Null if not applicable."
+    },
+    "length": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Response body length in bytes, vhost-only field. Null if not applicable."
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 500,
+      "description": "HTTP page title extracted from <title> tag, vhost-only field. Null if not applicable."
+    },
+    "redirect": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 500,
+      "description": "HTTP redirect target (Location header), vhost-only field. Null if not applicable."
+    },
+    "baseline_diff": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Vhost-only field. Object containing differences between this response and the baseline (status, length, title, redirect, etc.). Null if candidate matches baseline."
+    }
+  },
+  "additionalProperties": false,
+  "examples": [
+    {
+      "schema_version": "1.0",
+      "observed_at": "2026-07-24T13:11:00Z",
+      "target": "127.0.0.1",
+      "port": 8765,
+      "protocol": "tcp",
+      "service": "unknown",
+      "source_tool": "fallback-socket-scanner",
+      "source_file": "raw/fallback-socket-scanner/scan-1.txt",
+      "confidence": "medium",
+      "notes": "no banner",
+      "status": null,
+      "length": null,
+      "title": null,
+      "redirect": null,
+      "baseline_diff": null
+    },
+    {
+      "schema_version": "1.0",
+      "observed_at": "2026-07-24T13:11:05Z",
+      "target": "app.internal",
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "source_tool": "httpx",
+      "source_file": "raw/httpx/results-1.json",
+      "confidence": "high",
+      "notes": "vhost differs from baseline",
+      "status": 200,
+      "length": 15234,
+      "title": "Application Dashboard",
+      "redirect": null,
+      "baseline_diff": {
+        "status_diff": "200 vs 404",
+        "length_diff": "15234 vs 0",
+        "title_diff": "Application Dashboard vs (none)"
+      }
+    }
+  ]
+}
