@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScopeCsvRow",
+  "description": "Schema for one row of scope.csv, as read by recon_engine.scope.ScopeEngine._load_rules_from_csv. Each row is one allow/exclude rule.",
+  "type": "object",
+  "required": ["kind", "value", "direction"],
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": ["cidr", "hostname", "port"],
+      "description": "cidr: value is a CIDR block (e.g. 127.0.0.0/8). hostname: value is an exact hostname. port: value is transport/range (e.g. tcp/1-9000)."
+    },
+    "value": {
+      "type": "string",
+      "description": "The rule value, format depends on kind. See examples: '127.0.0.0/8' (cidr), 'target.invalid' (hostname), 'tcp/1-9000' (port)."
+    },
+    "direction": {
+      "type": "string",
+      "enum": ["IN", "OUT"],
+      "description": "IN rows are loaded as allow rules. OUT rows (e.g. the explicit loopback decoy) are excluded entirely -- never added to the allow-list, and the engine's hard-coded loopback guard (recon_engine.scope.LoopbackGuard) independently blocks anything outside 127.0.0.0/8 regardless of this column."
+    }
+  },
+  "examples": [
+    { "kind": "cidr", "value": "127.0.0.0/8", "direction": "IN" },
+    { "kind": "port", "value": "tcp/8000-8800", "direction": "IN" },
+    { "kind": "hostname", "value": "decoy.local", "direction": "OUT" }
+  ]
+}

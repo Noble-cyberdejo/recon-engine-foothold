@@ -23,7 +23,7 @@ def _record_for(record_id: str) -> NormalizedRecord:
         port=int(port),
         protocol=protocol,
         service="unknown",
-        source_tool="test",
+        source_tool="fallback-socket-scanner",
         source_file="test",
         confidence="high",
         notes="",
@@ -42,3 +42,12 @@ def test_dedupe_02_different_protocol_distinct():
     dedup = Deduplicator()
     dedup.add_all(_record_for(i) for i in fx["input_ids"])
     assert dedup.count() == fx["expected_count"]
+
+
+def add_all(self, records) -> None:
+    for record in records:
+        self.add(record)
+
+def values(self) -> list:
+    return list(self._store.values())
+

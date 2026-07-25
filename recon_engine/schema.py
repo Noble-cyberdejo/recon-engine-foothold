@@ -28,6 +28,8 @@ REQUIRED_FIELDS = (
 VHOST_FIELDS = ("status", "length", "title", "redirect", "baseline_diff")
 
 VALID_CONFIDENCE = ("high", "medium", "low")
+VALID_PROTOCOLS = ("tcp", "udp")
+VALID_SOURCE_TOOLS = ("nmap", "naabu", "httpx", "line", "fallback-socket-scanner")
 
 
 class SchemaError(ValueError):
@@ -59,14 +61,25 @@ class NormalizedRecord:
             raise SchemaError(
                 f"confidence must be one of {VALID_CONFIDENCE}, got {self.confidence!r}"
             )
-        if not isinstance(self.port, int):
-            raise SchemaError(f"port must be int, got {type(self.port)}")
+        if not isinstance(self.port, int) or not (0 < self.port < 65536):
+            raise SchemaError(f"port must be int 1-65535, got {self.port}")
+        if self.protocol not in VALID_PROTOCOLS:
+            raise SchemaError(f"protocol must be one of {VALID_PROTOCOLS}, got {self.protocol!r}")
+        if self.source_tool not in VALID_SOURCE_TOOLS:
+            raise SchemaError(f"source_tool must be one of {VALID_SOURCE_TOOLS}, got {self.source_tool!r}")
         for f in ("target", "protocol", "service", "source_tool", "source_file"):
             if not getattr(self, f):
                 raise SchemaError(f"required field '{f}' is empty")
 
     def dedupe_key(self) -> str:
-        """Canonical identity key: host:port:protocol (see DEDUPE-01/02)."""
+        """Canonical identity key: host:port:protocol (see DEDUPE-01/02).
+        
+        Critical: This must be stable across runs. If you change this
+        logic, already-deduped records in normalized/assets.jsonl will
+        have stale keys and re-dedup will fail. A stage is only marked
+        complete after all of its records are flushed, ensuring this
+        key remains deterministic.
+        """
         return f"{self.target}:{self.port}:{self.protocol}"
 
     def to_json_line(self) -> str:

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NormalizedRecord",
+  "description": "The single versioned schema every parser normalizes tool output into. See recon_engine/schema.py.",
+  "type": "object",
+  "required": ["observed_at", "target", "port", "protocol", "service", "source_tool", "source_file", "confidence", "notes", "schema_version"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0" },
+    "observed_at": { "type": "string", "format": "date-time", "description": "ISO8601 UTC timestamp" },
+    "target": { "type": "string", "description": "Host or IP as seen in the raw artifact" },
+    "port": { "type": "integer" },
+    "protocol": { "type": "string", "enum": ["tcp", "udp"] },
+    "service": { "type": "string" },
+    "source_tool": { "type": "string", "enum": ["nmap", "naabu", "httpx", "line", "fallback-socket-scanner"] },
+    "source_file": { "type": "string", "description": "Path under raw/<tool>/... this record was derived from" },
+    "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+    "notes": { "type": "string" },
+    "status": { "type": ["integer", "null"], "description": "vhost-only" },
+    "length": { "type": ["integer", "null"], "description": "vhost-only" },
+    "title": { "type": ["string", "null"], "description": "vhost-only" },
+    "redirect": { "type": ["string", "null"], "description": "vhost-only" },
+    "baseline_diff": { "type": ["object", "null"], "description": "vhost-only, populated when a candidate differs from the calibrated baseline" }
+  }
+}

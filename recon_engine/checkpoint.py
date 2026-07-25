@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import json
 import os
+import tempfile
 from typing import Optional
 
 STAGES = ("dns", "probe", "ports", "fingerprint")
@@ -44,8 +45,18 @@ class Checkpoint:
         self.pending = [s for s in STAGES if s not in self.completed]
 
     def _save(self) -> None:
-        with open(self.path, "w", encoding="utf-8") as f:
-            json.dump({"completed": self.completed, "pending": self.pending}, f, indent=2)
+        """Atomically save checkpoint to avoid partial writes on crash."""
+        data = {"completed": self.completed, "pending": self.pending}
+        # Write to temp file first, then rename (atomic on POSIX)
+        dir_path = os.path.dirname(self.path) or "."
+        with tempfile.NamedTemporaryFile(
+            mode="w", dir=dir_path, delete=False, encoding="utf-8"
+        ) as tmp:
+            json.dump(data, tmp, indent=2)
+            tmp.flush()
+            os.fsync(tmp.fileno())
+            tmp_path = tmp.name
+        os.replace(tmp_path, self.path)  # Atomic rename
 
     def mark_complete(self, stage: str) -> None:
         if stage not in STAGES:

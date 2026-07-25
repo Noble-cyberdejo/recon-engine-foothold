@@ -21,9 +21,13 @@ from __future__ import annotations
 
 import json
 import os
-import time
+import random
+import socket as socket_mod
+import traceback
 from datetime import datetime, timezone
 from typing import Optional
+
+import logging
 
 from .scope import ScopeEngine, CompositeScope, ScopeViolation
 from .ratelimit import RateLimiter, RequestBudget, BudgetExceeded
@@ -33,6 +37,8 @@ from .dedupe import Deduplicator
 from .wildcard import DNSWildcardDetector, VhostBaselineDiffer, VhostSnapshot
 from .schema import NormalizedRecord
 from .tools.fallback_socket_scanner import probe_tcp_port, probe_http
+
+logger = logging.getLogger(__name__)
 
 
 class OrchestratorError(Exception):
@@ -80,7 +86,7 @@ class Orchestrator:
         self.rate_limiter.wait_for_slot()
         return True
 
-    def _append_record(self, record: NormalizedRecord) -> None:
+   def _append_record(self, record: NormalizedRecord) -> None:
         self.dedup.add(record)
         with open(self._assets_path, "a", encoding="utf-8") as f:
             f.write(record.to_json_line() + "\n")
@@ -91,20 +97,27 @@ class Orchestrator:
     # -- stages --------------------------------------------------------
 
     def run_dns_stage(self) -> None:
-        import random
-        import socket as socket_mod
-
-        random_hosts = [f"nonexistent-{random.randint(100000,999999)}.{self.target}"
-                         for _ in range(3)]
+        """Probe for DNS wildcard with multiple attempts for robust consensus."""
         responses = []
-        for h in random_hosts:
-            try:
-                responses.append(socket_mod.gethostbyname(h))
-            except socket_mod.gaierror:
-                responses.append(None)
-        # only calibrate if all three resolved to something (a real wildcard sink)
-        if all(responses) and len(set(responses)) == 1:
-            self.dns_wildcard.calibrate(responses)
+        for attempt in range(3):
+            random_hosts = [f"nonexistent-{random.randint(100000,999999)}.{self.target}"
+                            for _ in range(3)]
+            attempt_responses = []
+            for h in random_hosts:
+                try:
+                    attempt_responses.append(socket_mod.gethostbyname(h))
+                except socket_mod.gaierror:
+                    attempt_responses.append(None)
+            responses.append(attempt_responses)
+        
+        # Calibrate only if ALL three attempts agree (robust consensus)
+        if all(r for r in responses):
+            unique_per_attempt = [len(set(r) - {None}) for r in responses]
+            if all(u == 1 for u in unique_per_attempt):  # Each attempt is consistent
+                sink_candidates = [list(set(r) - {None})[0] for r in responses]
+                if len(set(sink_candidates)) == 1:  # All attempts agree on the same sink
+                    self.dns_wildcard.calibrate(sink_candidates)
+        
         self.checkpoint.mark_complete("dns")
 
     def run_probe_stage(self) -> None:
@@ -113,20 +126,29 @@ class Orchestrator:
         for port in range(lo, hi + 1):
             if not self._authorized(self.target, port, "tcp", "probe"):
                 continue
-            result = probe_tcp_port(self.target, port)
-            if result.open:
-                record = NormalizedRecord(
-                    observed_at=self._now(),
-                    target=self.target,
-                    port=port,
-                    protocol="tcp",
-                    service="unknown",
-                    source_tool="fallback-socket-scanner",
-                    source_file=self._assets_path,
-                    confidence="medium",
-                    notes=f"banner: {result.banner!r}" if result.banner else "no banner",
-                )
-                self._append_record(record)
+            try:
+                result = probe_tcp_port(self.target, port, timeout=5)  # 5s timeout
+                if result.open:
+                    record = NormalizedRecord(
+                        observed_at=self._now(),
+                        target=self.target,
+                        port=port,
+                        protocol="tcp",
+                        service="unknown",
+                        source_tool="fallback-socket-scanner",
+                        source_file=self._assets_path,
+                        confidence="medium",
+                        notes=f"banner: {result.banner!r}" if result.banner else "no banner",
+                    )
+                    logger.debug(f"Port {port} open on {self.target}")
+                    self._append_record(record)
+            except socket_mod.timeout:
+                self.ledger.record("probe", self.target, port, "tcp", "allow", reason="timeout")
+                continue
+            except Exception as e:
+                self.ledger.record("probe", self.target, port, "tcp", "deny", reason=f"error: {e}")
+                logger.warning(f"Probe error on {self.target}:{port} — {e}")
+                continue
         self.checkpoint.mark_complete("probe")
 
     def run_ports_stage(self) -> None:
@@ -201,9 +223,24 @@ class Orchestrator:
                 nxt = self.checkpoint.next_stage()
                 if nxt is None:
                     break
-                stage_fns[nxt]()
+                try:
+                    stage_fns[nxt]()
+                except Exception as e:
+                    # Log stage failure but don't mark complete
+                    self.errors.append({
+                        "error": "STAGE_ERROR",
+                        "stage": nxt,
+                        "message": str(e),
+                        "traceback": traceback.format_exc()
+                    })
+                    # Re-raise to halt gracefully
+                    raise
         except ScopeViolation as e:
             self.errors.append({"error": "SCOPE_VIOLATION", "message": str(e)})
+        except BudgetExceeded as e:
+            self.errors.append({"error": "BUDGET_EXCEEDED", "message": str(e)})
+        except Exception as e:
+            self.errors.append({"error": "UNEXPECTED", "message": str(e)})
         finally:
             self.ledger.close()
 

@@ -62,14 +62,32 @@ class ScopeEngine:
 
     def __init__(self, rules: Iterable[ScopeRule]):
         self.rules = list(rules)
-        self._cidrs = [r.value for r in self.rules if r.kind == "cidr"]
+        self._cidrs = []
         self._hostnames = {r.value for r in self.rules if r.kind == "hostname"}
         self._port_ranges = []
+        
+        # Validate and load CIDR rules
+        for r in self.rules:
+            if r.kind == "cidr":
+                try:
+                    ipaddress.ip_network(r.value, strict=False)
+                    self._cidrs.append(r.value)
+                except ValueError as e:
+                    raise ValueError(f"Invalid CIDR in scope rules: {r.value!r} — {e}")
+        
+        # Load and validate port ranges
         for r in self.rules:
             if r.kind == "port":
                 transport, _, rng = r.value.partition("/")
                 lo, _, hi = rng.partition("-")
-                self._port_ranges.append((transport, int(lo), int(hi) if hi else int(lo)))
+                try:
+                    lo_int = int(lo)
+                    hi_int = int(hi) if hi else lo_int
+                    if not (0 < lo_int <= 65535 and 0 < hi_int <= 65535 and lo_int <= hi_int):
+                        raise ValueError(f"port range out of bounds: {lo}-{hi}")
+                    self._port_ranges.append((transport, lo_int, hi_int))
+                except ValueError as e:
+                    raise ValueError(f"Invalid port rule: {r.value!r} — {e}")
 
     @classmethod
     def from_csv(cls, path: str) -> "ScopeEngine":

@@ -1,0 +1,5 @@
+kind,value,direction
+cidr,127.0.0.0/8,IN
+hostname,127.0.0.1,IN
+port,tcp/1-9000,IN
+port,udp/1-9000,IN
