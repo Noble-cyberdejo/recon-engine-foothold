@@ -1,0 +1,310 @@
+{"method": "EMPTY", "observed_at": "2026-07-26T05:42:38.800463Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 1, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:43:18.058341Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 2, "service": "signal"}
+{"method": "PROVISION", "observed_at": "2026-07-26T05:43:18.065217Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 3, "service": "signal"}
+{"method": "REGISTER", "observed_at": "2026-07-26T05:43:18.067869Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 4, "service": "signal"}
+{"method": "BIND", "observed_at": "2026-07-26T05:43:18.073550Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 5, "service": "signal"}
+{"method": "OPEN", "observed_at": "2026-07-26T05:43:18.076067Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 6, "service": "signal"}
+{"method": "SET", "observed_at": "2026-07-26T05:43:18.100793Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 7, "service": "signal"}
+{"method": "ADD", "observed_at": "2026-07-26T05:43:18.106469Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 8, "service": "signal"}
+{"method": "CREATE", "observed_at": "2026-07-26T05:43:18.109562Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 9, "service": "signal"}
+{"method": "RESOLVE", "observed_at": "2026-07-26T05:43:18.111937Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 10, "service": "signal"}
+{"method": "LOOKUP", "observed_at": "2026-07-26T05:43:18.114095Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 11, "service": "signal"}
+{"method": "AUTH", "observed_at": "2026-07-26T05:43:18.116345Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 12, "service": "signal"}
+{"method": "LOGIN", "observed_at": "2026-07-26T05:43:18.118749Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 13, "service": "signal"}
+{"method": "USER", "observed_at": "2026-07-26T05:43:18.125599Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 14, "service": "signal"}
+{"method": "PASS", "observed_at": "2026-07-26T05:43:18.127922Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 15, "service": "signal"}
+{"method": "ECHO", "observed_at": "2026-07-26T05:43:18.130319Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 16, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T05:43:18.132693Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 17, "service": "signal"}
+{"method": "SCAN", "observed_at": "2026-07-26T05:43:18.135186Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 18, "service": "signal"}
+{"method": "DISCOVER", "observed_at": "2026-07-26T05:43:18.142046Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 19, "service": "signal"}
+{"method": "PROBE", "observed_at": "2026-07-26T05:43:18.144262Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 20, "service": "signal"}
+{"method": "QUERY", "observed_at": "2026-07-26T05:43:18.146553Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 21, "service": "signal"}
+{"method": "MAP", "observed_at": "2026-07-26T05:43:18.148786Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 22, "service": "signal"}
+{"method": "TABLE", "observed_at": "2026-07-26T05:43:18.160797Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 23, "service": "signal"}
+{"method": "SHOW", "observed_at": "2026-07-26T05:43:18.163306Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 24, "service": "signal"}
+{"method": "DUMP", "observed_at": "2026-07-26T05:43:18.165622Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 25, "service": "signal"}
+{"method": "CONNECT", "observed_at": "2026-07-26T05:43:18.167476Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 26, "service": "signal"}
+{"method": "TARGET", "observed_at": "2026-07-26T05:43:18.173188Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 27, "service": "signal"}
+{"method": "PROFILE", "observed_at": "2026-07-26T05:43:18.178139Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 28, "service": "signal"}
+{"method": "MODE", "observed_at": "2026-07-26T05:43:18.179970Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 29, "service": "signal"}
+{"method": "CONFIG", "observed_at": "2026-07-26T05:43:18.181872Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 30, "service": "signal"}
+{"method": "HOST", "observed_at": "2026-07-26T05:43:18.183463Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 31, "service": "signal"}
+{"method": "VHOST", "observed_at": "2026-07-26T05:43:18.185138Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 32, "service": "signal"}
+{"method": "NEXT", "observed_at": "2026-07-26T05:43:18.194087Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 33, "service": "signal"}
+{"method": "PATH", "observed_at": "2026-07-26T05:43:18.196237Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 34, "service": "signal"}
+{"method": "URL", "observed_at": "2026-07-26T05:43:18.198182Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 35, "service": "signal"}
+{"method": "ENDPOINT", "observed_at": "2026-07-26T05:43:18.200011Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 36, "service": "signal"}
+{"method": "SERVICE", "observed_at": "2026-07-26T05:43:18.201821Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 37, "service": "signal"}
+{"method": "PORT", "observed_at": "2026-07-26T05:43:18.210058Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 38, "service": "signal"}
+{"method": "ADDR", "observed_at": "2026-07-26T05:43:18.213238Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 39, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T05:44:21.010740Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 40, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:45:07.350116Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 41, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.589234Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 42, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.592650Z", "peer": "127.0.0.1", "resource": "/status", "result": 404, "sequence": 43, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.599071Z", "peer": "127.0.0.1", "resource": "/admin", "result": 404, "sequence": 44, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.602022Z", "peer": "127.0.0.1", "resource": "/debug", "result": 404, "sequence": 45, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.604878Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 46, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.607576Z", "peer": "127.0.0.1", "resource": "/flag", "result": 404, "sequence": 47, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.615315Z", "peer": "127.0.0.1", "resource": "/route", "result": 404, "sequence": 48, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.620336Z", "peer": "127.0.0.1", "resource": "/api", "result": 404, "sequence": 49, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.623397Z", "peer": "127.0.0.1", "resource": "/health", "result": 404, "sequence": 50, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.632082Z", "peer": "127.0.0.1", "resource": "/proof", "result": 404, "sequence": 51, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.635687Z", "peer": "127.0.0.1", "resource": "/operations", "result": 404, "sequence": 52, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.638547Z", "peer": "127.0.0.1", "resource": "/relay", "result": 404, "sequence": 53, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.641324Z", "peer": "127.0.0.1", "resource": "/console", "result": 404, "sequence": 54, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.643430Z", "peer": "127.0.0.1", "resource": "/dashboard", "result": 404, "sequence": 55, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.673190Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 56, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.676242Z", "peer": "127.0.0.1", "resource": "/?proof=9b625f9f1c831a2e", "result": 404, "sequence": 57, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:47:04.688266Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 58, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:49:20.038769Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 59, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:49:20.049109Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 60, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:49:20.051872Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 61, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:49:20.054705Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 62, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:49:20.063565Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 63, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:49:20.066472Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 64, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:49:20.069231Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 65, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T05:49:20.071773Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 66, "service": "http"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:51:36.523900Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 67, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:51:36.528700Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 68, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:51:36.541431Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 69, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.212689Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 70, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.215934Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 71, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.252609Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 72, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.256402Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 73, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.268719Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 74, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.272034Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 75, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.274921Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 76, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.283862Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 77, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.286415Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 78, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.289118Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 79, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.291455Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 80, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.300419Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 81, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T05:53:10.303596Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 82, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.456487Z", "peer": "127.0.0.1", "resource": "/user.txt?proof=9b625f9f1c831a2e", "result": 404, "sequence": 83, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.462399Z", "peer": "127.0.0.1", "resource": "/user.txt?token=9b625f9f1c831a2e", "result": 404, "sequence": 84, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.475671Z", "peer": "127.0.0.1", "resource": "/user.txt?route_proof=9b625f9f1c831a2e", "result": 404, "sequence": 85, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.480187Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 86, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.487666Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 87, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.490986Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 88, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.494595Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 89, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.498248Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 90, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.526577Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 91, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.529953Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 92, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.540393Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 93, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.544151Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 94, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.547773Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 95, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.558720Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 96, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:01:21.562147Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 97, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:43:45.558715Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 98, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.313818Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 99, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.328161Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 100, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.333630Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 101, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.346987Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 102, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.359699Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 103, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.366246Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 104, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.393129Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 105, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.408206Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 106, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.413540Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 107, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.417178Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 108, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:45:12.426338Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 109, "service": "http"}
+{"method": "CRED", "observed_at": "2026-07-26T06:47:48.171464Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 110, "service": "signal"}
+{"method": "CREDS", "observed_at": "2026-07-26T06:47:48.180889Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 111, "service": "signal"}
+{"method": "CREDENTIAL", "observed_at": "2026-07-26T06:47:48.182496Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 112, "service": "signal"}
+{"method": "CREDENTIALS", "observed_at": "2026-07-26T06:47:48.184382Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 113, "service": "signal"}
+{"method": "CHALLENGE", "observed_at": "2026-07-26T06:47:48.185898Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 114, "service": "signal"}
+{"method": "CLAIM", "observed_at": "2026-07-26T06:47:48.187272Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 115, "service": "signal"}
+{"method": "GRANT", "observed_at": "2026-07-26T06:47:48.190616Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 116, "service": "signal"}
+{"method": "ISSUE", "observed_at": "2026-07-26T06:47:48.197246Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 117, "service": "signal"}
+{"method": "KEY", "observed_at": "2026-07-26T06:47:48.200552Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 118, "service": "signal"}
+{"method": "SECRET", "observed_at": "2026-07-26T06:47:48.203809Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 119, "service": "signal"}
+{"method": "PW", "observed_at": "2026-07-26T06:47:48.239159Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 120, "service": "signal"}
+{"method": "PASSWORD", "observed_at": "2026-07-26T06:47:48.254446Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 121, "service": "signal"}
+{"method": "USERNAME", "observed_at": "2026-07-26T06:47:48.256082Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 122, "service": "signal"}
+{"method": "BASIC", "observed_at": "2026-07-26T06:47:48.264009Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 123, "service": "signal"}
+{"method": "ISSUE-CRED", "observed_at": "2026-07-26T06:47:48.266761Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 124, "service": "signal"}
+{"method": "WHO", "observed_at": "2026-07-26T06:47:48.268474Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 125, "service": "signal"}
+{"method": "IDENTITY", "observed_at": "2026-07-26T06:47:48.270104Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 126, "service": "signal"}
+{"method": "IDENT", "observed_at": "2026-07-26T06:47:48.271693Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 127, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.703644Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 128, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.715485Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 129, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.718943Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 130, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.721163Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 131, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.723209Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 132, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.725724Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 133, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.735194Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 134, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.738922Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 135, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.742796Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 136, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.753638Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 137, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.756486Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 138, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:54:04.758430Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 139, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.676604Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 140, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.688224Z", "peer": "127.0.0.1", "resource": "/status", "result": 404, "sequence": 141, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.691244Z", "peer": "127.0.0.1", "resource": "/admin", "result": 404, "sequence": 142, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.693704Z", "peer": "127.0.0.1", "resource": "/debug", "result": 404, "sequence": 143, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.695927Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 144, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.702711Z", "peer": "127.0.0.1", "resource": "/flag", "result": 404, "sequence": 145, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.705812Z", "peer": "127.0.0.1", "resource": "/route", "result": 404, "sequence": 146, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.707765Z", "peer": "127.0.0.1", "resource": "/api", "result": 404, "sequence": 147, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.709798Z", "peer": "127.0.0.1", "resource": "/health", "result": 404, "sequence": 148, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.711704Z", "peer": "127.0.0.1", "resource": "/proof", "result": 404, "sequence": 149, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.718787Z", "peer": "127.0.0.1", "resource": "/operations", "result": 404, "sequence": 150, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.721218Z", "peer": "127.0.0.1", "resource": "/relay", "result": 404, "sequence": 151, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.723436Z", "peer": "127.0.0.1", "resource": "/console", "result": 404, "sequence": 152, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.725416Z", "peer": "127.0.0.1", "resource": "/dashboard", "result": 404, "sequence": 153, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.728147Z", "peer": "127.0.0.1", "resource": "/login", "result": 404, "sequence": 154, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.736902Z", "peer": "127.0.0.1", "resource": "/auth", "result": 404, "sequence": 155, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.738976Z", "peer": "127.0.0.1", "resource": "/token", "result": 404, "sequence": 156, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.741293Z", "peer": "127.0.0.1", "resource": "/cred", "result": 404, "sequence": 157, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.743306Z", "peer": "127.0.0.1", "resource": "/creds", "result": 404, "sequence": 158, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.745920Z", "peer": "127.0.0.1", "resource": "/signal", "result": 404, "sequence": 159, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.754569Z", "peer": "127.0.0.1", "resource": "/line", "result": 404, "sequence": 160, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.756578Z", "peer": "127.0.0.1", "resource": "/whoami", "result": 404, "sequence": 161, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.758528Z", "peer": "127.0.0.1", "resource": "/me", "result": 404, "sequence": 162, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.760493Z", "peer": "127.0.0.1", "resource": "/session", "result": 404, "sequence": 163, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.762761Z", "peer": "127.0.0.1", "resource": "/key", "result": 404, "sequence": 164, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.772192Z", "peer": "127.0.0.1", "resource": "/access", "result": 404, "sequence": 165, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.774221Z", "peer": "127.0.0.1", "resource": "/grant", "result": 404, "sequence": 166, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.776477Z", "peer": "127.0.0.1", "resource": "/verify", "result": 404, "sequence": 167, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.778631Z", "peer": "127.0.0.1", "resource": "/robots.txt", "result": 200, "sequence": 168, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.789792Z", "peer": "127.0.0.1", "resource": "/index.html", "result": 404, "sequence": 169, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.803789Z", "peer": "127.0.0.1", "resource": "/favicon.ico", "result": 404, "sequence": 170, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:55:14.804530Z", "peer": "127.0.0.1", "resource": "/.well-known", "result": 404, "sequence": 171, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:56:16.180468Z", "peer": "127.0.0.1", "resource": "/ops-diagnostics", "result": 200, "sequence": 172, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:58:16.119219Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 173, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:59:25.466087Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 174, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:59:25.471934Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 175, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:59:25.483366Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 176, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:59:25.485421Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 177, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:59:25.487370Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 178, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:59:25.489536Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 179, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T06:59:25.491737Z", "peer": "127.0.0.1", "resource": "/user.txt?proof=9b625f9f1c831a2e", "result": 404, "sequence": 180, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:01:42.066157Z", "peer": "127.0.0.1", "resource": "/ops-diagnostics", "result": 200, "sequence": 181, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:01:42.070400Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 182, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:01:42.080700Z", "peer": "127.0.0.1", "resource": "/?proof=9b625f9f1c831a2e", "result": 404, "sequence": 183, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:01:42.085063Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 184, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.377435Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 185, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.381761Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 186, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.388219Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 187, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.390069Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 188, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.397787Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 189, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.399460Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 190, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.401335Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 191, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.403365Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 192, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.405565Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 193, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.412451Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 194, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.414760Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 195, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.416848Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 196, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.418882Z", "peer": "127.0.0.1", "resource": "/user.txt?proof=9b625f9f1c831a2e", "result": 404, "sequence": 197, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.420887Z", "peer": "127.0.0.1", "resource": "/user.txt?route_proof=9b625f9f1c831a2e", "result": 404, "sequence": 198, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.422599Z", "peer": "127.0.0.1", "resource": "/user.txt?signal_proof=9b625f9f1c831a2e", "result": 404, "sequence": 199, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:02:52.429813Z", "peer": "127.0.0.1", "resource": "/user.txt?token=9b625f9f1c831a2e", "result": 404, "sequence": 200, "service": "http"}
+{"method": "AUTH support45 B2KaHs-pl-ycQyjYZtgY", "observed_at": "2026-07-26T07:04:07.451549Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 201, "service": "signal"}
+{"method": "AUTH support45:B2KaHs-pl-ycQyjYZtgY", "observed_at": "2026-07-26T07:04:07.454686Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 202, "service": "signal"}
+{"method": "LOGIN support45 B2KaHs-pl-ycQyjYZtgY", "observed_at": "2026-07-26T07:04:07.461926Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 203, "service": "signal"}
+{"method": "LOGIN support45:B2KaHs-pl-ycQyjYZtgY", "observed_at": "2026-07-26T07:04:07.463207Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 204, "service": "signal"}
+{"method": "USER support45 B2KaHs-pl-ycQyjYZtgY", "observed_at": "2026-07-26T07:04:07.464601Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 205, "service": "signal"}
+{"method": "ROUTE support45 B2KaHs-pl-ycQyjYZtgY", "observed_at": "2026-07-26T07:04:07.465962Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 206, "service": "signal"}
+{"method": "ROUTE support45:B2KaHs-pl-ycQyjYZtgY", "observed_at": "2026-07-26T07:04:07.467456Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 207, "service": "signal"}
+{"method": "SIGNAL support45:B2KaHs-pl-ycQyjYZtgY", "observed_at": "2026-07-26T07:04:07.468861Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 208, "service": "signal"}
+{"method": "CONNECT support45:B2KaHs-pl-ycQyjYZtgY", "observed_at": "2026-07-26T07:04:07.470145Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 209, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.041117Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 210, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.046183Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 211, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.058123Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 212, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.061097Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 213, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.064737Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 214, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.071772Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 215, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.075317Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 216, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.078471Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 217, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.080768Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 218, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.088919Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 401, "sequence": 219, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.092216Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 220, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:07:22.094175Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 403, "sequence": 221, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:09:19.257699Z", "peer": "127.0.0.1", "resource": "/user.txt/9b625f9f1c831a2e", "result": 404, "sequence": 222, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:09:19.268005Z", "peer": "127.0.0.1", "resource": "/user.txt/proof/9b625f9f1c831a2e", "result": 404, "sequence": 223, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:09:19.272956Z", "peer": "127.0.0.1", "resource": "/9b625f9f1c831a2e/user.txt", "result": 404, "sequence": 224, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:09:19.274991Z", "peer": "127.0.0.1", "resource": "/user.txt;proof=9b625f9f1c831a2e", "result": 404, "sequence": 225, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T07:09:19.276914Z", "peer": "127.0.0.1", "resource": "/user.txt%3Fproof%3D9b625f9f1c831a2e", "result": 404, "sequence": 226, "service": "http"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:23:09.378400Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 227, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:23:13.378460Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 228, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:23:17.388772Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 229, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:23:21.402876Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 230, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:23:25.410932Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 231, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:25:25.502111Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 232, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:25:29.513031Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 233, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:25:33.527646Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 234, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:25:37.530720Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 235, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:25:41.534972Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 236, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:25:45.542645Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 237, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:25:49.553812Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 238, "service": "signal"}
+{"method": "TIMEOUT", "observed_at": "2026-07-26T07:25:53.565317Z", "peer": "127.0.0.1", "resource": "", "result": 408, "sequence": 239, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:28:19.270474Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 240, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:28:20.273450Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 241, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local:19483", "observed_at": "2026-07-26T07:28:21.283691Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 242, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:29:55.362540Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 243, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:29:56.402839Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 244, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:29:57.415907Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 245, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:29:58.417891Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 246, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:29:59.425233Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 247, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:30:00.442559Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 248, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:30:01.445651Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 249, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:30:02.459102Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 250, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:30:03.474571Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 251, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:30:04.487456Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 252, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:30:05.488700Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 253, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:30:06.507721Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 254, "service": "signal"}
+{"method": "ROUTE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:34:57.924915Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 255, "service": "signal"}
+{"method": "HOST relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.818320Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 256, "service": "signal"}
+{"method": "VHOST relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.821357Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 257, "service": "signal"}
+{"method": "SELECT relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.822796Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 258, "service": "signal"}
+{"method": "USE relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.824231Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 259, "service": "signal"}
+{"method": "TARGET relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.825695Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 260, "service": "signal"}
+{"method": "CONNECT relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.827172Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 261, "service": "signal"}
+{"method": "SET HOST relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.828501Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 262, "service": "signal"}
+{"method": "SNI relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.829754Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 263, "service": "signal"}
+{"method": "TO relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.831771Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 264, "service": "signal"}
+{"method": "DEST relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.840633Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 265, "service": "signal"}
+{"method": "BACKEND relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.842002Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 266, "service": "signal"}
+{"method": "SWITCH relay-b334776.northstar.local", "observed_at": "2026-07-26T07:36:20.843284Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 267, "service": "signal"}
+{"method": "PROFILE dynamic", "observed_at": "2026-07-26T07:36:20.844540Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 268, "service": "signal"}
+{"method": "VERSION", "observed_at": "2026-07-26T07:36:20.845667Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 269, "service": "signal"}
+{"method": "COMMANDS", "observed_at": "2026-07-26T07:36:20.846975Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 270, "service": "signal"}
+{"method": "CAPABILITIES", "observed_at": "2026-07-26T07:36:20.852296Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 271, "service": "signal"}
+{"method": "EMPTY", "observed_at": "2026-07-26T07:37:57.458395Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 272, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T07:38:06.040477Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 273, "service": "signal"}
+{"method": "EMPTY", "observed_at": "2026-07-26T07:56:20.002352Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 274, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T07:56:20.023860Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 275, "service": "http"}
+{"method": "GET / HTTP/1.1", "observed_at": "2026-07-26T07:56:20.025399Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 276, "service": "signal"}
+{"method": "CAPS", "observed_at": "2026-07-26T07:56:20.026916Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 277, "service": "signal"}
+{"method": "EMPTY", "observed_at": "2026-07-26T07:59:11.602126Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 278, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T07:59:11.618096Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 279, "service": "http"}
+{"method": "GET / HTTP/1.1", "observed_at": "2026-07-26T07:59:11.620496Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 280, "service": "signal"}
+{"method": "CAPS", "observed_at": "2026-07-26T07:59:11.622591Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 281, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T07:59:11.670333Z", "peer": "127.0.0.1", "resource": "/robots.txt", "result": 200, "sequence": 282, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T08:02:18.267765Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 283, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T08:02:18.346153Z", "peer": "127.0.0.1", "resource": "/robots.txt", "result": 200, "sequence": 284, "service": "http"}
+{"method": "EMPTY", "observed_at": "2026-07-26T08:03:59.892874Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 285, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T08:03:59.921674Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 286, "service": "http"}
+{"method": "GET / HTTP/1.1", "observed_at": "2026-07-26T08:03:59.923280Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 287, "service": "signal"}
+{"method": "CAPS", "observed_at": "2026-07-26T08:03:59.924602Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 288, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T08:03:59.960270Z", "peer": "127.0.0.1", "resource": "/robots.txt", "result": 200, "sequence": 289, "service": "http"}
+{"method": "EMPTY", "observed_at": "2026-07-26T08:06:31.839821Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 290, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T08:06:31.855694Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 291, "service": "http"}
+{"method": "GET / HTTP/1.1", "observed_at": "2026-07-26T08:06:31.857502Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 292, "service": "signal"}
+{"method": "CAPS", "observed_at": "2026-07-26T08:06:31.858996Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 293, "service": "signal"}
+{"method": "CAPS", "observed_at": "2026-07-26T08:06:31.861084Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 294, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T08:06:31.862676Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 295, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T08:06:31.906249Z", "peer": "127.0.0.1", "resource": "/robots.txt", "result": 200, "sequence": 296, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T08:06:31.908419Z", "peer": "127.0.0.1", "resource": "/ops-diagnostics", "result": 200, "sequence": 297, "service": "http"}
+{"method": "CAPS", "observed_at": "2026-07-26T08:07:43.901333Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 298, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T08:07:43.903294Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 299, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T08:07:43.959178Z", "peer": "127.0.0.1", "resource": "/robots.txt", "result": 200, "sequence": 300, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T08:07:43.963202Z", "peer": "127.0.0.1", "resource": "/ops-diagnostics", "result": 200, "sequence": 301, "service": "http"}
+{"method": "EMPTY", "observed_at": "2026-07-26T08:08:46.653502Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 302, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T08:08:46.670339Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 303, "service": "http"}
+{"method": "GET / HTTP/1.1", "observed_at": "2026-07-26T08:08:46.672094Z", "peer": "127.0.0.1", "resource": "line", "result": 400, "sequence": 304, "service": "signal"}
+{"method": "CAPS", "observed_at": "2026-07-26T08:08:46.673188Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 305, "service": "signal"}
+{"method": "CAPS", "observed_at": "2026-07-26T08:08:46.674893Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 306, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T08:08:46.676044Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 307, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T08:08:46.705355Z", "peer": "127.0.0.1", "resource": "/robots.txt", "result": 200, "sequence": 308, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T08:08:46.707133Z", "peer": "127.0.0.1", "resource": "/ops-diagnostics", "result": 200, "sequence": 309, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T08:08:46.711960Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 200, "sequence": 310, "service": "http"}
