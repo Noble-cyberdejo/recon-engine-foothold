@@ -1,0 +1,12 @@
+path,description,bytes,sha256
+run/run.json,"Run summary: versions, timing, request accounting",292,dc7d7b4de5441634af3cc86dd037d1a6708dd72475b938c09c56fd4780241015
+run/normalized/assets.jsonl,Normalized discovery + foothold records,1639,e9de812b360d2fc8248e9e93e54167c2f9cd5bfc8c40e5c6ad75ae6894ba14fa
+run/request-ledger.csv,Engine-side allow/deny decision ledger,264550,0e81cf541e1e7c2dcd9dda2b1e61947a7021a9b18147b2aac71c1161e6639370
+run/errors.jsonl,Errors recorded during the run,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+run/report.html,Human-readable discovery report,1481,40b4a63fa5df124b003ac097f2d34820b8d68a5bdca519952cba8ece64721034
+lab-runtime/assignment.json,Target-issued assignment metadata,363,5dbd27034491e8ad590165519061aeba5e16b1400e0580b25b2616bc1d6ce124
+lab-runtime/scope.csv,Target-issued authorized scope,227,e452577b7c2dba702fc6e37caed7137a2e0f990df429abeb57b3d7d7a73bd10c
+lab-runtime/target-request-ledger.jsonl,Target-side independent request corroboration,51340,c1d7b9cd9e3e1daffdefcf8ed975c13a4d4bdff5c3db5442e5789e1021f143b5
+integrity-attestation.md,Signed integrity attestation,1390,7a320974a2fa3bf3d4ee566f56463ea1c2a6197c11e39a4bd1a7919e2e6b736b
+continuity-record.md,Stage handoff / continuity record,3092,7ea3cc9828649f15675989ae02c7923f29ea69a9047ddb3090f37bc943836b46
+evidence/rules-of-engagement.md,Signed rules of engagement,1031,2218d171002aec7f9772ff5668c4af5212070d46c8a3f4bf4d1961a9e2b9f8b6

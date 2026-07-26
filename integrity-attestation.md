@@ -1,8 +1,8 @@
 # Advanced Project 1 Integrity Attestation
 
-**Intern code**: [UBI-2026-0027]
-**Variant**: [D2]
-**Evidence marker**: [UBI-A5-7A05BB4E73AC]
+**Intern code**: UBI-2026-0027
+**Variant**: D2
+**Evidence marker**: UBI-A5-7A05BB4E73AC
 
 I attest that I performed the submitted work on the assigned authorized
 artifacts or lab. I have declared material assistance below and can
@@ -27,5 +27,5 @@ I understand that assistance is not authorship, that I remain responsible
 for every claim in this submission, and that I must be able to explain
 and reproduce this work live during defense.
 
-**Signed name**: [Oguamanam Noble Eberechukwu]
-**UTC date/time**: [INSERT — from the command above]
+**Signed name**: Oguamanam Noble Eberechukwu
+**UTC date/time**: 2026-07-26T08:24:03Z

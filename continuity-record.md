@@ -50,6 +50,11 @@ identifier, evidence, cleanup, and remediation model"):
   wrapper pattern (never shell string concatenation) for invoking
   external tools safely, plus the fallback-on-missing-tool pattern.
 
-[FILL IN once your foothold work is complete: the specific runtime
-identifier / evidence ledger / cleanup interface you're formally handing
-to Stage 6, per the brief's "Mission interface and handoff" section.]
+This project hands forward to Stage 6: the `Orchestrator._attempt_foothold`
+adaptive-discovery pattern (capability-probe -> route-proof -> breadcrumb-follow
+-> authenticated-fetch) as a reusable model for chaining a non-HTTP service to
+an HTTP one; the `recon_engine.tools.signal_protocol` and
+`recon_engine.tools.http_discovery` adapters as examples of protocol-adaptive
+discovery modules built against the `adapter_base` interface; and the
+`run/normalized/assets.jsonl` evidence ledger produced by this run as the
+runtime-identifier record for evidence marker UBI-A5-7A05BB4E73AC.

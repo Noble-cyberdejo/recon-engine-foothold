@@ -13,6 +13,6 @@
 
 I understand and accept the scope.
 
-Intern code: `[insert]`  
-Signed name: `[insert]`  
-UTC date/time: `[insert]`
+Intern code: `UBI-2026-0027`  
+Signed name: `Oguamanam Noble Eberechukwu`  
+UTC date/time: `2026-07-26T08:27:45Z`
